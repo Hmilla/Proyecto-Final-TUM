@@ -1,14 +1,22 @@
 import { useParams } from "react-router-dom";
-import  Afiliaciones from './Afiliaciones'
+import {
+  Afiliaciones,
+  Bienvenida,
+  NuestrosObjetivos,
+  NuestroLocal,
+  NuestrosPrincipiosPedagogicos,
+} from "../index";
 
-export default function NuestroColegio(){
-    const {subpage} = useParams()
+export default function NuestroColegio() {
+  const { subpage } = useParams();
 
-    const NuestroColegio = {
-        "afiliaciones": <Afiliaciones />
-    }
+  const NuestroColegio = {
+    afiliaciones: <Afiliaciones />,
+    bienvenida: <Bienvenida />,
+    nuestrosobjetivos: <NuestrosObjetivos />,
+    nuestrolocal: <NuestroLocal />,
+    nuestrosprincipiospedagogicos: <NuestrosPrincipiosPedagogicos />,
+  };
 
-    return(
-        <h1>{subpage} {NuestroColegio[subpage]}</h1>
-    )
+  return <>{NuestroColegio[subpage]}</>;
 }

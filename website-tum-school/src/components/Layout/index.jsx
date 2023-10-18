@@ -22,9 +22,9 @@ export default function Layout() {
     ],
     "Proyecto Educativo": [
       "Año Escolar 2024",
-      "Metadología",
+      "Metodología",
       "Niveles",
-      "Apoyo Psocológico",
+      "Apoyo Psicológico",
       "Talleres",
     ],
     Diversos: ["Blog", "Comunidad", "Proyectos"],
@@ -42,10 +42,10 @@ export default function Layout() {
       <div className="container">
         <div className="flex flex-col items-center w-screen md:px-10 lg:flex-row">
           <div className="flex items-center justify-between w-[80%] sm:w-[65%] md:w-auto">
-            <img src={logo} alt="" className="h-32 lg:mr-20" />
+            <img src={logo} alt="" className="h-28 sm:h-32 lg:mr-20" />
             <div
               onClick={toggleNavbar}
-              className={`${isOpen? "ring ring-blue-300 shadow-md bg-blue-500":""}  p-2 rounded md:hidden text-white text-4xl hover:bg-black/25 cursor-pointer`} 
+              className={`${isOpen? "ring ring-blue-300 shadow-md bg-blue-500":""}  p-2 rounded md:hidden text-white text-3xl sm:text-4xl hover:bg-black/25 cursor-pointer`} 
             >
               <AiOutlineMenu/>
             </div>
