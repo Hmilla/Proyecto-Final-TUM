@@ -13,10 +13,11 @@ function limpiartexto(texto) {
 
 export default function ItemHeader({ item, list_values}) {
   return (
-    <>
-      <Menu as="div" className="relative inline-block text-left">
+    <div>
+      <Menu as="div" className="relative inline-block text-left w-full">
         <div>
-          <Menu.Button className="w-full flex items-center gap-2 px-1 py-1 text-lg font-semibold text-white ">
+        
+          <Menu.Button className="flex items-center gap-2 px-1 py-1 text-lg font-semibold text-white ">
             {item}
             <div>
               <BiSolidChevronDown />
@@ -32,7 +33,7 @@ export default function ItemHeader({ item, list_values}) {
           leaveFrom="opacity-100 scale-y-100 origin-top"
           leaveTo="opacity-0 scale-y-0 origin-top"
         >
-          <Menu.Items className=" md:absolute md:whitespace-nowrap w-full md:w-auto  left-0 z-10 md:mt-2 inline-block bg-white shadow-lg">
+          <Menu.Items className=" w-full left-0 z-10 md:mt-2  bg-white shadow-lg md:absolute md:whitespace-nowrap md:w-auto ">
             <div className="py-1">
               {list_values.map((value) => (
                 <Link key={value} to={`/${limpiartexto(item)}/${limpiartexto(value)}`}>
@@ -56,6 +57,6 @@ export default function ItemHeader({ item, list_values}) {
           </Menu.Items>
         </Transition>
       </Menu>
-    </>
+    </div>
   );
 }

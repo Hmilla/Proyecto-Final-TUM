@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, NuestroColegio, Admision, ProyectoEducativo, Diversos } from "../pages";
+import { HomePage, NuestroColegioPage, AdmisionPage, ProyectoEducativoPage, DiversosPage } from "../pages";
 import { Layout } from "../components";
 
 export default function Router() {
@@ -7,11 +7,11 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/nuestrocolegio/:subpage" element={<NuestroColegio />} />
-          <Route path="/admision/:subpage" element={<Admision />} />
-          <Route path="/proyectoeducativo/:subpage" element={<ProyectoEducativo />} />
-          <Route path="/diversos/:subpage" element={<Diversos />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/nuestrocolegio/:subpage" element={<NuestroColegioPage />} />
+          <Route path="/admision/:subpage" element={<AdmisionPage />} />
+          <Route path="/proyectoeducativo/:subpage" element={<ProyectoEducativoPage />} />
+          <Route path="/diversos/:subpage" element={<DiversosPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
