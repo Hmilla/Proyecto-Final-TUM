@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Postw",
+      "body": "this is the post body",
+      "publishedAt": "2023-10-19"
+    },
+    {
+      "title": "dd",
+      "body": "dd",
+      "id": "ysN-d6i"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Hector",
+      "email": "hmillar1000@gmail.com"
+    }
+  ]
+}
