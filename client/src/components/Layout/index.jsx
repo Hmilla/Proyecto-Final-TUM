@@ -40,6 +40,7 @@ export default function Layout() {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+  // localStorage.removeItem('user');
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -88,7 +89,7 @@ export default function Layout() {
             <div className="flex flex-col sm:flex-row sm:justify-between w-[70%] m-auto py-10">
               <div className="mb-6 md:mb-0 flex flex-col gap-2">
                 <p className="text-3xl mb-4">Contáctenos </p>
-                <div class="me-3 contacto disapear pb-1">
+                <div className="me-3 contacto disapear pb-1">
                   <p>
                     Teléfono: <a href="#"> 922794600 </a>
                   </p>

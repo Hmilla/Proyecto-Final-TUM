@@ -1,22 +1,353 @@
 {
-  "posts": [
+  "posts": [],
+  "admins": [
     {
-      "id": "1",
-      "title": "Postw",
-      "body": "this is the post body",
-      "publishedAt": "2023-10-19"
-    },
-    {
-      "title": "dd",
-      "body": "dd",
-      "id": "ysN-d6i"
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "contraseña",
+      "id": 3
     }
   ],
-  "users": [
+  "students": [
     {
-      "id": "1",
-      "name": "Hector",
-      "email": "hmillar1000@gmail.com"
+      "name": "Estudiante1",
+      "email": "estudiante1@gmail.com",
+      "class": "inicial",
+      "password": "contraseña",
+      "id": 1
+    },
+    {
+      "name": "Estudiante2",
+      "email": "estudiante2@gmail.com",
+      "class": "inicial",
+      "password": "contraseña",
+      "id": 2
+    },
+    {
+      "name": "Estudiante3",
+      "email": "estudiante3@gmail.com",
+      "class": "inicial",
+      "password": "contraseña",
+      "id": 3
+    },
+    {
+      "name": "Estudiante4",
+      "email": "estudiante4@gmail.com",
+      "class": "1",
+      "password": "contraseña",
+      "id": 4
+    },
+    {
+      "name": "Estudiante5",
+      "email": "estudiante5@gmail.com",
+      "class": "1",
+      "password": "contraseña",
+      "id": 5
+    },
+    {
+      "name": "Estudiante 6",
+      "email": "estudiante6@gmail.com",
+      "class": "1",
+      "password": "contraseña",
+      "id": 6
+    },
+    {
+      "name": "Estudiante7",
+      "email": "estudiante7@gmail.com",
+      "class": "2",
+      "password": "contraseña",
+      "id": 7
+    },
+    {
+      "name": "Estudiante 8",
+      "email": "estudiante8@gmail.com",
+      "class": "2",
+      "password": "contraseña",
+      "id": 8
+    },
+    {
+      "name": "Estudiante9",
+      "email": "estudiante9@gmail.com",
+      "class": "3",
+      "password": "contraseña",
+      "id": 9
+    },
+    {
+      "name": "Estudiante10",
+      "email": "estudiante10@gmail.com",
+      "class": "3",
+      "password": "contraseña",
+      "id": 10
+    },
+    {
+      "name": "Estudiante 11",
+      "email": "estudiante11@gmail.com",
+      "class": "4",
+      "password": "contraseña",
+      "id": 11
+    },
+    {
+      "name": "Estudiante 13",
+      "email": "estudiante13@gmail.com",
+      "class": "5",
+      "password": "contraseña",
+      "id": 12
+    },
+    {
+      "name": "Estudiante 12",
+      "email": "estudiante12@gmail.com",
+      "class": "4",
+      "password": "contraseña",
+      "id": 13
+    },
+    {
+      "name": "Estudiante 14",
+      "email": "estudiante14@gmail.com",
+      "class": "4",
+      "password": "contraseña",
+      "id": 14
+    },
+    {
+      "name": "Estudiante15",
+      "email": "estudiante15@gmail.com",
+      "class": "6",
+      "password": "contraseña",
+      "id": 15
+    },
+    {
+      "name": "Estudiante 16",
+      "email": "estudiante16@gmail.com",
+      "class": "6",
+      "password": "contraseña",
+      "id": 16
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Profesor1",
+      "email": "profesor1@gmail.com",
+      "courses": [
+        "comunicacion",
+        "personalsocial",
+        "matematica",
+        "educacionreligiosa"
+      ],
+      "password": "contraseña",
+      "id": 1
+    },
+    {
+      "name": "Profesor2",
+      "email": "profesor2@gmail.com",
+      "courses": [
+        "comunicacion",
+        "psicomotriz"
+      ],
+      "password": "contraseña",
+      "id": 2
+    },
+    {
+      "name": "Profesor3",
+      "email": "profesor3@gmail.com",
+      "courses": [
+        "tutoriayorientacioneducativa",
+        "educacionreligiosa"
+      ],
+      "password": "contraseña",
+      "id": 3
+    },
+    {
+      "name": "Profesor4",
+      "email": "profesor4@gmail.com",
+      "courses": [
+        "psicomotriz",
+        "arteycultura",
+        "educacionfisica"
+      ],
+      "password": "contraseña",
+      "id": 4
+    },
+    {
+      "name": "Profesor5",
+      "email": "profesor5@gmail.com",
+      "courses": [
+        "arteycultura",
+        "personalsocial",
+        "educacionreligiosa"
+      ],
+      "password": "contraseña",
+      "id": 5
+    }
+  ],
+  "grades": [
+    {
+      "id": 1,
+      "description": "Descripcion",
+      "clase": "inicial",
+      "teacher_id": 1,
+      "course": "matematica",
+      "student_grades": [
+        {
+          "student_id": 1,
+          "grade": 20
+        },
+        {
+          "student_id": 2,
+          "grade": 13
+        },
+        {
+          "student_id": 3,
+          "grade": 20
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "description": "Descripcion2",
+      "clase": "1",
+      "teacher_id": 1,
+      "course": "matematica",
+      "student_grades": [
+        {
+          "student_id": 4,
+          "grade": 20
+        },
+        {
+          "student_id": 5,
+          "grade": 13
+        },
+        {
+          "student_id": 6,
+          "grade": 13
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "description": "Descripcion3",
+      "clase": "2",
+      "teacher_id": 1,
+      "course": "matematica",
+      "student_grades": [
+        {
+          "student_id": 7,
+          "grade": 20
+        },
+        {
+          "student_id": 8,
+          "grade": 3
+        }
+      ]
+    },
+    {
+      "description": "ww",
+      "clase": "5",
+      "teacher_id": 1,
+      "course": "matematica",
+      "student_grades": [
+        {
+          "student_id": 1,
+          "grade": 5
+        },
+        {
+          "student_id": 2,
+          "grade": 3
+        },
+        {
+          "student_id": 3,
+          "grade": 3
+        },
+        {
+          "student_id": 12,
+          "grade": 17
+        }
+      ],
+      "id": 4
+    },
+    {
+      "description": "wwwwwwww",
+      "clase": "5",
+      "teacher_id": 1,
+      "course": "matematica",
+      "student_grades": [
+        {
+          "student_id": 12,
+          "grade": 5
+        }
+      ],
+      "id": 5
+    },
+    {
+      "description": "",
+      "clase": "5",
+      "teacher_id": 1,
+      "course": "comunicacion",
+      "student_grades": [
+        {
+          "student_id": 12,
+          "grade": -4
+        }
+      ],
+      "id": 6
+    },
+    {
+      "description": "",
+      "clase": "5",
+      "teacher_id": 1,
+      "course": "comunicacion",
+      "student_grades": [
+        {
+          "student_id": 12,
+          "grade": 70
+        }
+      ],
+      "id": 7
+    },
+    {
+      "description": "ioo",
+      "clase": "5",
+      "teacher_id": 1,
+      "course": "comunicacion",
+      "student_grades": [
+        {
+          "student_id": 12,
+          "grade": 4
+        }
+      ],
+      "id": 8
+    },
+    {
+      "description": "",
+      "clase": "5",
+      "teacher_id": 1,
+      "course": "comunicacion",
+      "student_grades": [
+        {
+          "student_id": 12,
+          "grade": 10
+        }
+      ],
+      "id": 9
+    },
+    {
+      "description": "mkm",
+      "clase": "inicial",
+      "teacher_id": 1,
+      "course": "comunicacion",
+      "student_grades": [
+        {
+          "student_id": 1,
+          "grade": 4
+        },
+        {
+          "student_id": 2,
+          "grade": 7
+        },
+        {
+          "student_id": 3,
+          "grade": 12
+        }
+      ],
+      "id": 10
     }
   ]
 }

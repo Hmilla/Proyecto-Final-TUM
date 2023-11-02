@@ -5,12 +5,13 @@ import {
   NuestrosObjetivosPage,
   NuestroLocalPage,
   NuestrosPrincipiosPedagogicosPage,
+  NonExistent
 } from "../index";
 
 export default function NuestroColegio() {
   const { subpage } = useParams();
 
-  const NuestroColegio = {
+  const subpagesNuestroColegio = {
     afiliaciones: <AfiliacionesPage />,
     bienvenida: <BienvenidaPage />,
     nuestrosobjetivos: <NuestrosObjetivosPage />,
@@ -18,5 +19,13 @@ export default function NuestroColegio() {
     nuestrosprincipiospedagogicos: <NuestrosPrincipiosPedagogicosPage />,
   };
 
-  return <>{NuestroColegio[subpage]}</>;
+  if(! subpagesNuestroColegio[subpage]){
+    return (
+        <>
+            <NonExistent />
+        </>
+    )
+}
+
+  return <>{subpagesNuestroColegio[subpage]}</>;
 }

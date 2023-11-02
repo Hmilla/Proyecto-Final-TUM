@@ -15,14 +15,15 @@ export function useForm(inputs) {
   const validateIfValuesHasEmpty = () => {
     const empties = Object.keys(values)
       .filter((value) => !values[value])
-      .map((value) => [value, "Este campo es obligatorio"]);
+      .map((value) => [value, "Este campo es requerido"]);
 
     if (empties.length === 0) {
       setErrors({});
-      return;
+      return true;
     }
 
     setErrors(Object.fromEntries(empties));
+    return false
   };
 
   return {

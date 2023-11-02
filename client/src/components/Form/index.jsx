@@ -6,7 +6,7 @@ export default function Form({
   values,
   handleInputChange,
   errors,
-  textButton,
+  textButton
 }) {
   return (
     <form onSubmit={handleFormSubmit} className="mb-5 flex flex-col gap-5">

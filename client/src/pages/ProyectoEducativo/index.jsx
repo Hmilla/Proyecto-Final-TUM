@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import{ Ano2023Page, ApoyoPsicologicoPage, MetodologiaPage, NivelesPage, TalleresPage} from '../index'
+import{ Ano2023Page, ApoyoPsicologicoPage, MetodologiaPage, NivelesPage, TalleresPage, NonExistent} from '../index'
 
 export default function ProyectoEducativo(){
     const {subpage} = useParams()
@@ -12,9 +12,17 @@ export default function ProyectoEducativo(){
         "talleres": <TalleresPage/>
     }
 
+    if(! subpagesProyectoEducativo[subpage]){
+        return (
+            <>
+                <NonExistent />
+            </>
+        )
+    }
+
     return(
         <>
-            {subpagesProyectoEducativo[subpage]}
+            {subpagesProyectoEducativo[subpage] }
         </>
     )
 }

@@ -5,6 +5,9 @@ import Local3 from '../../assets/nuestrocolegio/local/Local3.jpeg'
 import Local4 from '../../assets/nuestrocolegio/local/Local4.jpg'
 import Local5 from '../../assets/nuestrocolegio/local/Local5.jpg'
 import Local6 from '../../assets/nuestrocolegio/local/Local6.jpg'
+import { useDispatch } from "react-redux";
+import { clearUser } from "../../slices/userSlice";
+  
 
 export default function Home(){
     const slides = [
@@ -27,6 +30,8 @@ export default function Home(){
             url : Local6,
         },
     ]
+    const dispatch = useDispatch();
+    dispatch(clearUser());
 
     return(
         <>

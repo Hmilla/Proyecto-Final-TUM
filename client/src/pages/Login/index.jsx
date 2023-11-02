@@ -1,36 +1,26 @@
-import { Form } from "../../components";
-import { inputs } from "./form";
-import { useForm } from "../../hooks/useForm";
+import { Link } from "react-router-dom";
+export default function Login(){
 
-export default function Login() {
-  const { values, errors, handleInputChange, validateIfValuesHasEmpty } =
-    useForm({
-      email: "",
-      password: "",
-    });
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    validateIfValuesHasEmpty();
-    
-  };
-
-  return (
-    <>
-      <div className="h-screen flex items-center pl-20  bg-[url('/background.jpg')] bg-no-repeat bg-center bg-cover">
-    
-          <h1 className="text-3xl mt-5 mb-3">Login</h1>
-          <p className="mb-5">Welcome back! Inicia sesión</p>
-          <Form
-            inputs={inputs}
-            values={values}
-            errors={errors}
-            textButton="Iniciar Sesión"
-            handleFormSubmit={handleSubmit}
-            handleInputChange={handleInputChange}
-          />
-
-      </div>
-    </>
-  );
+    return (
+        <div className="flex flex-col items-center justify-center h-screen relative">
+          <Link to="/" className="absolute top-0 left-0 m-4 text-green-600 hover:underline">
+            <p className="font-bold">Home</p>
+          </Link>
+          <h2 className="text-3xl mb-4">¿Qué eres?</h2>
+          <div className="flex flex-col md:flex-row">
+            <Link to="admin" className="text-blue-600 hover:underline mb-2 md:mr-4 md:mb-0">
+              <p>Admin</p>
+            </Link>
+            <Link to="teacher" className="text-blue-600 hover:underline mb-2 md:mr-4 md:mb-0">
+              <p>Teacher</p>
+            </Link>
+            <Link to="student" className="text-blue-600 hover:underline">
+              <p>Student</p>
+            </Link>
+          </div>
+        </div>
+      );
+      
+      
+      
 }
