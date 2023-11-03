@@ -1,4 +1,4 @@
-import {Admin, Resource } from 'react-admin'
+import {Admin, Resource, useLogout  } from 'react-admin'
 import {TeacherCreate, TeacherList, TeacherEdit, StudentList, StudentCreate, StudentEdit, AdminList, AdminCreate, AdminEdit } from '../../components'
 import jsonServerProvider from "ra-data-json-server";
 import { Navigate } from "react-router-dom"
@@ -9,6 +9,7 @@ import { userSelector } from "../../selectors/userSelector"
 export default function AdminPage() {
   const dataProvider = jsonServerProvider('http://localhost:5000');
   const user = useSelector(userSelector)
+  
    if(!user || user.role !== "admin") return <Navigate to="/login/admin" />
 
   return (

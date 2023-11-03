@@ -15,6 +15,9 @@ export {default as Image} from './Image'
 
 export {default as Layout} from './Layout'
 export {default as LoginComponent} from './LoginComponent'
+export {default as LogoutButton} from './LogoutButton'
+
+export{ default as ModalCreateGrades} from './ModalCreateGrades'
 
 
 export {default as Slider} from './Slider'
@@ -28,3 +31,4 @@ export {default as Title} from './Title'
 export {default as StudentList} from './StudentList'
 export {default as StudentCreate} from './StudentCreate'
 export {default as StudentEdit} from './StudentEdit'
+export {default as Select} from './Select'

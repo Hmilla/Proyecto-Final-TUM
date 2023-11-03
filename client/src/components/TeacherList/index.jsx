@@ -15,8 +15,8 @@ const TeacherList = (props) => {
         <TextField source="name" />
         <TextField source="email" />
         <TextField source="password" />
-        <EditButton basePath="/teachers" />
-        <DeleteButton basePath="/teachers" />
+        <EditButton basepath="/teachers" />
+        <DeleteButton basepath="/teachers" />
       </Datagrid>
     </List>
   );

@@ -29,8 +29,8 @@ import {
           <TextField source="name" />
           <TextField source="email" />
           <TextField source="password" />
-          <EditButton basePath="/admins" />
-          <DeleteButton basePath="/admins" />
+          <EditButton basepath="/admins" />
+          <DeleteButton basepath="/admins" />
         </Datagrid>
       </List>
     );

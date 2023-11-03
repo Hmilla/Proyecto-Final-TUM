@@ -4,10 +4,12 @@ export default function TextField({
     placeholder = "Escribe tu tarea",
     className,
     type="text",
-    name
+    name,
+    id
   }) {
     return (
       <input
+        id={id}
         type={type}
         value={value}
         onChange={onChange}

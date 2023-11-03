@@ -3,11 +3,12 @@ import {
   AiOutlineInstagram,
   AiOutlineFacebook,
 } from "react-icons/ai";
-import { FaTiktok } from "react-icons/fa";
+import { FaTiktok, FaSignInAlt } from "react-icons/fa";
 import { useState } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import logo from "../../assets/TUMSchool-logo.png";
 import { ItemHeader } from "../index.js";
+
 
 export default function Layout() {
   const listHeader = {
@@ -21,8 +22,14 @@ export default function Layout() {
     Admisión: [
       "Requisitos",
       "Pensiones",
-       ["Solicita una Cita y Visita Guiada", "https://docs.google.com/forms/d/e/1FAIpQLSc9UfsNGws1FInzXBoLikUqdZ37Ws2Iln70_A86H531_3U9Mg/viewform"],
-       ["Formulario de inscripción", "https://docs.google.com/forms/d/e/1FAIpQLSc9UfsNGws1FInzXBoLikUqdZ37Ws2Iln70_A86H531_3U9Mg/viewform"],
+      [
+        "Solicita una Cita y Visita Guiada",
+        "https://docs.google.com/forms/d/e/1FAIpQLSc9UfsNGws1FInzXBoLikUqdZ37Ws2Iln70_A86H531_3U9Mg/viewform",
+      ],
+      [
+        "Formulario de inscripción",
+        "https://docs.google.com/forms/d/e/1FAIpQLSf7b8NETXUgPTPE6Ws0q4mzvM-85_Z_0O_lnKkZag3cjqVl0w/viewform?usp=sharing ",
+      ],
     ],
     "Proyecto Educativo": [
       "Año Escolar 2023",
@@ -64,18 +71,25 @@ export default function Layout() {
           <div
             className={` ${
               isOpen ? "flex" : "hidden"
-            } flex-col p-4 my-4 md:flex  bg-black/40  w-[80%] border-green-600 transiton duration-300 md:bg-transparent md:p-0 md:flex-row md:items-center md:justify-between md:w-full lg:flex-1`}
+            } flex-col p-4 my-4 md:flex  bg-black/40  w-[80%] border-green-600 transition duration-300 md:bg-transparent md:p-0 md:flex-row md:items-center md:justify-between md:w-full lg:flex-1`}
           >
             {Object.keys(listHeader).map((item) => {
-              return <ItemHeader item={item} list_values={listHeader[item]} />;
+              return (
+                <ItemHeader
+                  key={item}
+                  item={item}
+                  list_values={listHeader[item]}
+                />
+              );
             })}
             <div className="px-1 cursor-pointer">
-              <Link to="/login">
-              <p className="text-white capitalize font-semibold text-base">
-                login
-              </p>
+              <Link
+                to="/login"
+                className="hover:bg-blue-500 text-white font-semibold text-base px-4 py-2 rounded-lg flex items-center space-x-2"
+              >
+                <FaSignInAlt />
+                <p>Login</p>
               </Link>
-              
             </div>
           </div>
         </div>
@@ -83,13 +97,13 @@ export default function Layout() {
       <div className="flex-grow">
         <Outlet />
       </div>
-      <div className="bg-blue-900 px-5 pt-5 text-white ">
+      <div className="bg-blue-900 px-4 pt-5 text-white ">
         {location.pathname === "/" && (
           <>
             <div className="flex flex-col sm:flex-row sm:justify-between w-[70%] m-auto py-10">
               <div className="mb-6 md:mb-0 flex flex-col gap-2">
                 <p className="text-3xl mb-4">Contáctenos </p>
-                <div className="me-3 contacto disapear pb-1">
+                <div className="me-3 contacto disappear pb-1">
                   <p>
                     Teléfono: <a href="#"> 922794600 </a>
                   </p>
@@ -147,9 +161,15 @@ export default function Layout() {
                 </div>
               </div>
               <div>
-                <p className="text-3xl mb-4"> Mapa de Sitio </p>
-                <div>
-
+                <p className="text-3xl mb-4"> Horario de atención </p>
+                <div className="flex flex-col items-center">
+                  <p>lun: 8:00 a. m. – 5:00 p. m.</p>
+                  <p>mar: 8:00 a. m. – 5:00 p. m.</p>
+                  <p>mié: 8:00 a. m. – 5:00 p. m.</p>
+                  <p>jue: 8:00 a. m. – 5:00 p. m.</p>
+                  <p>vie: 8:00 a. m. – 5:00 p. m.</p>
+                  <p>sáb: 8:00 a. m. – 1:00 p. m.</p>
+                  <p>dom: Cerrado</p>
                 </div>
               </div>
             </div>
