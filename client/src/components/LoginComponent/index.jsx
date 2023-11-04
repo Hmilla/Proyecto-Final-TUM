@@ -19,22 +19,22 @@ export default function LoginComponent({ role, find }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!validateIfValuesHasEmpty()) return;
-
+    const alertaPasswordEmail = ()=>{
+      Swal.fire({
+        icon: "error",
+        text: "Email y/o password incorrecto",
+      });
+      
+    }
     const user = await find("email", values.email);
-    if (!user) {
-      Swal.fire({
-        icon: "error",
-        text: "Email y/o password incorrecto",
-      });
+    if (!user){ 
+      alertaPasswordEmail()
       return;
     }
-    if (user.password !== values.password) {
-      Swal.fire({
-        icon: "error",
-        text: "Email y/o password incorrecto",
-      });
+    if (user.password !== values.password){
+      alertaPasswordEmail()
       return;
-    }
+    } 
     dispatch(saveUser({ ...user, role }));
     navigate(`/admin`);
   };

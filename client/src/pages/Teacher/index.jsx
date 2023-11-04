@@ -5,6 +5,7 @@ import { userIdSelector } from "../../selectors/userSelector";
 import { read, create, destroy } from "../../services";
 import { userSelector } from "../../selectors/userSelector";
 import { ModalCreateGrades, Select, Container, LogoutButton } from "../../components";
+import Swal from "sweetalert2";
 
 export default function Teacher() {
   const user = useSelector(userSelector);
@@ -64,20 +65,23 @@ export default function Teacher() {
 
   const handleCreateGrades = async () => {
     if (!newGradeDescription) {
-      alert("Por favor, complete todos los campos antes de crear las calificaciones.");
+      Swal.fire({
+        icon: "error",
+        text: "Debes completar todos los campos",
+      });
       return;
     }
-  
+
     const studentGrades = Object.keys(newGrades).map((studentId) => ({
       student_id: parseInt(studentId),
       grade: parseInt(newGrades[studentId]),
     }));
-  
+
     const minGrade = Math.min(...studentGrades.map((grade) => grade.grade));
     const maxGrade = Math.max(...studentGrades.map((grade) => grade.grade));
     const sumGrades = studentGrades.reduce((sum, grade) => sum + grade.grade, 0);
     const averageGrade = (sumGrades / studentGrades.length).toFixed(1);
-  
+
     const newGrade = {
       description: newGradeDescription,
       clase,
@@ -88,7 +92,7 @@ export default function Teacher() {
       max_grade: maxGrade,
       promedio: averageGrade,
     };
-  
+
     const response = await create(newGrade, "grades");
     if (response) {
       getGrades();
@@ -97,7 +101,6 @@ export default function Teacher() {
       closeModal();
     }
   };
-  
 
   const destroyGrade = async (id) => {
     const response = await destroy("grades", id);
@@ -107,22 +110,23 @@ export default function Teacher() {
   };
 
   return (
-    <>
+    <div className="bg-gradient-to-b from-purple-500 to-blue-500 min-h-screen text-white">
       <LogoutButton />
 
       <Container>
-        <div className="text-xl font-bold mb-4">{user.name}</div>
+        <h1 className="text-4xl font-bold mt-4 mb-8">Hola, {user.name}!</h1>
+
         <div className="flex justify-between">
           <div className="flex gap-8">
             <Select
-              title="una Clase"
+              title="Una Clase"
               value={clase}
               onChange={handleSelectClassChange}
               items={classes}
             />
 
             <Select
-              title="un Curso"
+              title="Un Curso"
               value={course}
               onChange={handleSelectCourseChange}
               items={user.courses}
@@ -130,7 +134,7 @@ export default function Teacher() {
           </div>
           <button
             onClick={openModal}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4 mt-4 mb-4"
+            className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-4 mt-4 mb-4"
           >
             Crea una calificación
           </button>
@@ -144,41 +148,30 @@ export default function Teacher() {
             .filter((grade) => grade.clase === clase && grade.course === course)
             .map((grade) => (
               <div key={grade.id} className="mb-6">
-                <div className=" bg-gray-200 pl-4 pt-2">
-                <div className="text-xl font-semibold mb-1">
-                  {grade.description}
+                <div className="bg-purple-400 p-4 rounded-lg">
+                  <div className="text-2xl font-semibold mb-1">{grade.description}</div>
+                  <div className="text-google-red bg-white/20 font-semibold">
+                    Min Nota: {grade.min_grade}
+                  </div>
+                  <div className="text-google-green bg-white/20 font-semibold">
+                    Max Nota: {grade.max_grade}
+                  </div>
+                  <div className="text-google-blue bg-white/20 font-semibold">
+                    Promedio: {grade.promedio}
+                  </div>
                 </div>
 
-                <div className="text-google-red font-semibold">
-                  Min Nota: {grade.min_grade}
-                </div>
-                <div className="text-google-green font-semibold">
-                  Max Nota: {grade.max_grade}
-                </div>
-                <div className="text-google-blue font-semibold">
-                  Promedio: {grade.promedio}
-                </div>
-                </div>
-                
-
-                <div className="bg-gray-200 p-4">
-                  <div className="grid grid-cols-2 font-bold">
+                <div className="bg-blue-400 p-4 rounded-lg mt-4">
+                  <div className="grid grid-cols-2 font-bold text-white">
                     <div>Nombre del Estudiante</div>
                     <div>Calificación</div>
                   </div>
                   {grade.student_grades.map((gradeStudent) => (
-                    <div
-                      className="grid grid-cols-2 gap-2"
-                      key={gradeStudent.student_id}
-                    >
-                      <div className="bg-white p-2">
-                        {
-                          students.find(
-                            (student) => student.id === gradeStudent.student_id
-                          )?.name
-                        }
+                    <div className="grid grid-cols-2 gap-2 text-black font-semibold" key={gradeStudent.student_id}>
+                      <div className="bg-white p-2 rounded">
+                        {students.find((student) => student.id === gradeStudent.student_id)?.name}
                       </div>
-                      <div className="bg-white p-2">{gradeStudent.grade}</div>
+                      <div className="bg-white p-2 rounded">{gradeStudent.grade}</div>
                     </div>
                   ))}
                 </div>
@@ -208,6 +201,6 @@ export default function Teacher() {
           handleCreateGrades={handleCreateGrades}
         />
       </Container>
-    </>
+    </div>
   );
 }

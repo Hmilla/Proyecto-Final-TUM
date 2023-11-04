@@ -204,102 +204,6 @@
       "id": 23
     },
     {
-      "description": "12",
-      "clase": "inicial",
-      "teacher_id": 1,
-      "course": "comunicacion",
-      "student_grades": [
-        {
-          "student_id": 1,
-          "grade": 12
-        },
-        {
-          "student_id": 2,
-          "grade": 12
-        },
-        {
-          "student_id": 3,
-          "grade": 20
-        }
-      ],
-      "min_grade": 12,
-      "max_grade": 20,
-      "promedio": 14.6,
-      "id": 24
-    },
-    {
-      "description": "Test de comunicación",
-      "clase": "inicial",
-      "teacher_id": 1,
-      "course": "comunicacion",
-      "student_grades": [
-        {
-          "student_id": 1,
-          "grade": 12
-        },
-        {
-          "student_id": 2,
-          "grade": 7
-        },
-        {
-          "student_id": 3,
-          "grade": 3
-        }
-      ],
-      "min_grade": 3,
-      "max_grade": 12,
-      "promedio": "7.3",
-      "id": 25
-    },
-    {
-      "description": "Test de personal social",
-      "clase": "4",
-      "teacher_id": 5,
-      "course": "personalsocial",
-      "student_grades": [
-        {
-          "student_id": 11,
-          "grade": 12
-        },
-        {
-          "student_id": 13,
-          "grade": 12
-        },
-        {
-          "student_id": 14,
-          "grade": 14
-        }
-      ],
-      "min_grade": 12,
-      "max_grade": 14,
-      "promedio": "12.7",
-      "id": 26
-    },
-    {
-      "description": "Test",
-      "clase": "inicial",
-      "teacher_id": 5,
-      "course": "arteycultura",
-      "student_grades": [
-        {
-          "student_id": 1,
-          "grade": 12
-        },
-        {
-          "student_id": 2,
-          "grade": 12
-        },
-        {
-          "student_id": 3,
-          "grade": 20
-        }
-      ],
-      "min_grade": 12,
-      "max_grade": 20,
-      "promedio": "14.7",
-      "id": 27
-    },
-    {
       "description": "Trabajo de tutoría",
       "clase": "inicial",
       "teacher_id": 3,
@@ -322,6 +226,54 @@
       "max_grade": 14,
       "promedio": "13.0",
       "id": 28
+    },
+    {
+      "description": "12",
+      "clase": "inicial",
+      "teacher_id": 1,
+      "course": "comunicacion",
+      "student_grades": [
+        {
+          "student_id": 1,
+          "grade": 12
+        },
+        {
+          "student_id": 2,
+          "grade": 14
+        },
+        {
+          "student_id": 3,
+          "grade": 12
+        }
+      ],
+      "min_grade": 12,
+      "max_grade": 14,
+      "promedio": "12.7",
+      "id": 29
+    },
+    {
+      "description": "calificacion",
+      "clase": "inicial",
+      "teacher_id": 1,
+      "course": "comunicacion",
+      "student_grades": [
+        {
+          "student_id": 1,
+          "grade": 12
+        },
+        {
+          "student_id": 2,
+          "grade": 12
+        },
+        {
+          "student_id": 3,
+          "grade": 12
+        }
+      ],
+      "min_grade": 12,
+      "max_grade": 12,
+      "promedio": "12.0",
+      "id": 30
     }
   ]
 }
