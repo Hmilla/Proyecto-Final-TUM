@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
-  HomePage,
-  NuestroColegioPage,
   AdmisionPage,
-  ProyectoEducativoPage,
-  DiversosPage,
-  Login,
   AdminPage,
   AdminLoginPage,
-  TeacherLoginPage,
+  DiversosPage,
+  HomePage,
+  LoginPage,
+  NuestroColegioPage,
+  ProyectoEducativoPage,
   StudentLoginPage,
   StudentPage,
+  TeacherLoginPage,
   TeacherPage
-} from "../pages";
-import { Layout } from "../components";
+} from '../pages';
+import { Layout } from '../components';
 
 export default function Router() {
   return (
@@ -32,7 +32,7 @@ export default function Router() {
           />
           <Route path="/diversos/:subpage" element={<DiversosPage />} />
         </Route>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/login/admin" element={<AdminLoginPage />} />
         <Route path="/login/teacher" element={<TeacherLoginPage />} />
         <Route path="/login/student" element={<StudentLoginPage />} />

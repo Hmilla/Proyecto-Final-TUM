@@ -12,10 +12,9 @@ export default function ApoyoPsicologico() {
               Tiene la misión de contribuir en el desarrollo integral de
               nuestros alumnos en un trabajo coordinado con la Dirección,
               docentes y familias. De acuerdo con un cronograma se brinda en las
-              tardes asesorías o charlas a Padres con hijos.{" "}
+              tardes asesorías o charlas a Padres con hijos.
             </p>
-            <h2 className="text-xl mt-4 mb-2" >Formación de la Familia </h2>
-
+            <h2 className="text-xl mt-4 mb-2" >Formación de la Familia</h2>
             <p className="text-parrafo-gray">
               La formación de los hijos, además de ser un arte, es también una
               ciencia que puede y debe aprenderse. En la sociedad actual, es
@@ -23,7 +22,6 @@ export default function ApoyoPsicologico() {
               ayuden a cumplir el rol de primeros educadores de sus hijos.
             </p>
           </div>
-
           <Image src={Psicologia} description="Psicología educativa" className="mt-5 lg:mt-0"/>
         </div>
       </Container>

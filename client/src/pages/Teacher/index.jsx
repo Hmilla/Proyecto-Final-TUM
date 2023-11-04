@@ -42,13 +42,10 @@ export default function Teacher() {
     getStudents();
   }, [userId]);
 
-  // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // New grade description state
   const [newGradeDescription, setNewGradeDescription] = useState("");
 
-  // New grades state
   const [newGrades, setNewGrades] = useState({});
 
   const openModal = () => {
@@ -59,17 +56,13 @@ export default function Teacher() {
     setIsModalOpen(false);
   };
 
-  // Handle grade change
   const handleGradeChange = (studentId, value) => {
-    // Ensure the value is within the range of -1 and 21
     if (value >= 0 && value <= 20) {
       setNewGrades({ ...newGrades, [studentId]: value });
     }
   };
 
-  // Create new grades
   const handleCreateGrades = async () => {
-    // Verificar si todos los campos están llenos
     if (!newGradeDescription) {
       alert("Por favor, complete todos los campos antes de crear las calificaciones.");
       return;
@@ -137,7 +130,7 @@ export default function Teacher() {
           </div>
           <button
             onClick={openModal}
-            className="bg-blue-500 text-white p-2 rounded"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4 mt-4 mb-4"
           >
             Crea una calificación
           </button>

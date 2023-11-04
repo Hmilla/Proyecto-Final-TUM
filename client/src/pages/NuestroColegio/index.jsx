@@ -1,12 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import {
   AfiliacionesPage,
   BienvenidaPage,
   NuestrosObjetivosPage,
   NuestroLocalPage,
-  NuestrosPrincipiosPedagogicosPage,
-  NonExistent
-} from "../index";
+  NuestrosPrincipiosPedagogicosPage
+} from '../index';
+import {NonExistent} from '../../components'
 
 export default function NuestroColegio() {
   const { subpage } = useParams();
@@ -19,13 +19,8 @@ export default function NuestroColegio() {
     nuestrosprincipiospedagogicos: <NuestrosPrincipiosPedagogicosPage />,
   };
 
-  if(! subpagesNuestroColegio[subpage]){
-    return (
-        <>
-            <NonExistent />
-        </>
-    )
-}
+  if(! subpagesNuestroColegio[subpage]) return  <NonExistent />
+
 
   return <>{subpagesNuestroColegio[subpage]}</>;
 }

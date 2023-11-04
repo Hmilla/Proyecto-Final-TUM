@@ -38,7 +38,6 @@ export default function NuestrosObjetivos() {
     }
     return <p className="ml-4 text-parrafo-gray">{value}</p>;
   };
-
   return (
     <>
       <Title title="Nuestros Objetivos" className="bg-google-green" />

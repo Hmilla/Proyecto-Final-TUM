@@ -6,7 +6,7 @@ export default function Image({src, className, description}){
               alt=""
               className="object-contain lg:object-cover "
             />
-            <p className="fontfamily-lora text-sm text-google-blue/60">{description}</p>
+            <p className="fontfamily-lora italic text-sm text-google-blue/60">{description}</p>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 export default function Login(){
-
     return (
         <div className="flex flex-col items-center justify-center h-screen relative">
           <Link to="/" className="absolute top-0 left-0 m-4 text-green-600 hover:underline">
@@ -19,8 +18,5 @@ export default function Login(){
             </Link>
           </div>
         </div>
-      );
-      
-      
-      
+      );     
 }

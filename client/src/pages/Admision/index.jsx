@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import { PensionesPage, RequisitosPage, NonExistent} from '../index'
+import { PensionesPage, RequisitosPage} from '../index'
+import {NonExistent} from '../../components'
 
 export default function Admision(){
     const {subpage} = useParams()
@@ -9,14 +10,7 @@ export default function Admision(){
         "pensiones" : <PensionesPage />
     }
 
-    if(! subpagesAdmision[subpage]){
-        return (
-            <>
-                <NonExistent />
-            </>
-        )
-    }
-
+    if(! subpagesAdmision[subpage]) return  <NonExistent />
     return(
         <>
             {subpagesAdmision[subpage]}

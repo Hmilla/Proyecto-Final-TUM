@@ -7,7 +7,6 @@ export default function Bienvenida() {
       <div>
         <Title className="bg-google-green" title="Bienvenida" />
       </div>
-
       <Container>
         <h2 className="text-3xl pb-6 sm:text-4xl">
           TUM School : Talentos Únicos del Mañana
@@ -29,9 +28,7 @@ export default function Bienvenida() {
               serie de virtudes humanas.
             </p>
           </div>
-
           <Image className="lg:w-[45%]" src={TUMDireccion} description="Cuerpo docente" />
-        
         </div>
       </Container>
     </div>

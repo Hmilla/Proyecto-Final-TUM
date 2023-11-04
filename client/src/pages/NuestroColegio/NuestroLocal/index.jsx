@@ -14,7 +14,6 @@ export default function NuestroLocal() {
         <p className="text-lg font-medium mb-6">
           Contamos con un local de uso exclusivo para el Colegio en donde funcionan los niveles de Inicial y primaria:
         </p>
-
         <div className=" md:grid grid-cols-2 md:grid-cols-3 gap-4">
           <div className="col-span-2">
             <Image src={Local3} description="Fachada Colegio" />

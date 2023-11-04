@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import {BlogPage, ComunidadPage, ProyectosPage, NonExistent} from '../index'
+import {BlogPage, ComunidadPage, ProyectosPage} from '../index'
+import {NonExistent} from '../../components'
 
 export default function Diversos(){
     const {subpage} = useParams()
@@ -9,13 +10,7 @@ export default function Diversos(){
         "proyectos": <ProyectosPage />
     }
 
-    if(! subpagesDiversos[subpage]){
-        return (
-            <>
-                <NonExistent />
-            </>
-        )
-    }
+    if(! subpagesDiversos[subpage]) return  <NonExistent />
 
     return(
         <>

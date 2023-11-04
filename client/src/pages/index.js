@@ -16,12 +16,12 @@ export {default as DiversosPage} from './Diversos'
 export { default as HomePage } from "./Home";
 
 
-export {default as Login} from './Login'
+export {default as LoginPage} from './Login'
 
 export {default as MetodologiaPage} from './ProyectoEducativo/Metodologia'
 
 export {default as NivelesPage} from './ProyectoEducativo/Niveles'
-export {default as NonExistent} from './NonExistent'
+export {default as NonExistent} from '../components/NonExistent'
 export {default as NuestroColegioPage } from './NuestroColegio';
 export {default as NuestroLocalPage} from './NuestroColegio/NuestroLocal'
 export {default as NuestrosPrincipiosPedagogicosPage} from './NuestroColegio/NuestrosPrincipiosPedagogicos'

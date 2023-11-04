@@ -8,7 +8,6 @@ export default function Comunidad(){
             <Container>
                 <Image src={ComunidadEscolar} description="Comunidad Escolar"/>
             </Container>
-
         </>
     )
 }

@@ -9,7 +9,6 @@ export default function Proyectos(){
                 <p className="font-semibold text-xl mb-4">Proyectos del Consytec:</p>
                 <Image src={Concytec} description="Concytec"/>
             </Container>
-
         </>
     )
 }

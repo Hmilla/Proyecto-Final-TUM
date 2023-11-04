@@ -1,4 +1,6 @@
-import { Slider, Image } from "../../components";
+import { useDispatch } from "react-redux";
+import { clearUser } from "../../slices/userSlice"; 
+import { Image, Slider, Subtitle } from "../../components";
 import Local1 from "../../assets/nuestrocolegio/local/Local1.jpg";
 import Local2 from "../../assets/nuestrocolegio/local/Local2.jpg";
 import Local3 from "../../assets/nuestrocolegio/local/Local3.jpeg";
@@ -10,8 +12,6 @@ import Festividades from "../../assets/proyectoeducativo/Festividades.jpg";
 import Musica from "../../assets/proyectoeducativo/Musica.jpg";
 import Deporte from "../../assets/proyectoeducativo/Deporte.jpg";
 import Danzas from "../../assets/proyectoeducativo/Danzas.jpg";
-import { useDispatch } from "react-redux";
-import { clearUser } from "../../slices/userSlice";
 import Mapa from "../../assets/Mapa.jpg";
 
 export default function Home() {
@@ -48,9 +48,9 @@ export default function Home() {
         </span>
         <span className="absolute bottom-0 left-1/2 w-1/2 transform -translate-x-1/2 border-b-4 border-black/50"></span>
       </blockquote>
-      <p className="text-3xl font-bold text-center bg-gray-700 text-white p-2">Galería</p>
+      <Subtitle text="Galería" />
       <Slider slides={slides} />
-      <p className="text-3xl font-bold text-center bg-gray-700 text-white p-2">Talleres</p>
+      <Subtitle text="Talleres" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-2xl my-5 px-4">
           <div className="flex flex-col items-center">
             <p className="mb-2 font-semibold">Danza</p>
@@ -73,7 +73,7 @@ export default function Home() {
             <Image src={Festividades} />
           </div>
         </div>
-      <p className="text-3xl font-bold text-center bg-gray-700 text-white p-2">Pedir Cita</p>
+        <Subtitle text="Pedir Cita" />
       <div className=" p-4 text-center">
         <p className="text-2xl font-semibold">
           Education Center en San Martín de Porres
@@ -88,9 +88,9 @@ export default function Home() {
         </a>
       </div>
 
-      <p className="text-3xl font-bold text-center bg-gray-700 text-white p-2">Mapa</p>
+      <Subtitle text="Mapa" />
       <div className="flex justify-center">
-      <img src={Mapa} className="md:w-[70%]"/>
+      <Image src={Mapa} className="md:w-[70%]"/>
       </div>
       
     </div>

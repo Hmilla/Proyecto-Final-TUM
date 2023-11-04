@@ -1,6 +1,5 @@
-import CalendarioTUMSchool from '../../../assets/proyectoeducativo/CalendarioTUMSchool.jpg'
 import {Container, Title} from '../../../components'
-
+import CalendarioTUMSchool from '../../../assets/proyectoeducativo/CalendarioTUMSchool.jpg'
 
 export default function Ano2023(){
     return(

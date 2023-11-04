@@ -7,18 +7,18 @@ function classNames(...classes) {
 }
 
 function limpiartexto(texto) {
-  return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"").replace(/\s+/g, '').toLowerCase();
+  return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "")
+    .toLowerCase();
 }
 
-
-export default function ItemHeader({ item, list_values}) {
-
-
+export default function ItemHeader({ item, list_values }) {
   return (
     <div>
       <Menu as="div" className="relative inline-block text-left w-full z-40">
         <div>
-        
           <Menu.Button className="flex items-center gap-2 px-1 py-1 text-lg font-semibold text-white ">
             {item}
             <div>
@@ -37,39 +37,47 @@ export default function ItemHeader({ item, list_values}) {
         >
           <Menu.Items className=" w-full left-0 z-10 md:mt-2  bg-white shadow-lg md:absolute md:whitespace-nowrap md:w-auto ">
             <div className="py-1">
-              {list_values.map((value) => (
-                typeof value === 'string' ?
-                <Link key={value} to={`/${limpiartexto(item)}/${limpiartexto(value)}`}>
-                  <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-300 text-gray-900" : "text-gray-800",
-                        "block px-4 py-2 text-sm font-semibold"
+              {list_values.map((value) =>
+                typeof value === "string" ? (
+                  <Link
+                    key={value}
+                    to={`/${limpiartexto(item)}/${limpiartexto(value)}`}
+                  >
+                    <Menu.Item>
+                      {({ active }) => (
+                        <div
+                          href="#"
+                          className={classNames(
+                            active
+                              ? "bg-gray-300 text-gray-900"
+                              : "text-gray-800",
+                            "block px-4 py-2 text-sm font-semibold"
+                          )}
+                        >
+                          {value}
+                        </div>
                       )}
-                    >
-                      {value }
-                    </a>
-                  )}
-                </Menu.Item>
-                </Link> : 
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      href={value[1]}
-                      target="_blank" 
-                      className={classNames(
-                        active ? "bg-gray-300 text-gray-900" : "text-gray-800",
-                        "block px-4 py-2 text-sm font-semibold"
+                    </Menu.Item>
+                  </Link>
+                ) : (
+                  <Link key={value} to={value[1]}>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <div
+                          className={classNames(
+                            active
+                              ? "bg-gray-300 text-gray-900"
+                              : "text-gray-800",
+                            "block px-4 py-2 text-sm font-semibold"
+                          )}
+                        >
+                          {value[0]}
+                        </div>
                       )}
-                    >
-                      {value[0] }
-                    </a>
-                  )}
-                </Menu.Item>
-                
-              ))}
+                    </Menu.Item>
+                  </Link>
+                )
+              )}
             </div>
           </Menu.Items>
         </Transition>
