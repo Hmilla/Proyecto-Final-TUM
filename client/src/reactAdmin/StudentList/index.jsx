@@ -13,7 +13,7 @@ import {
           <TextField source="id" />
           <TextField source="name" />
           <TextField source="email" />
-          <TextField source="class" />
+          <TextField source="clase" />
           <TextField source="password" />
           <EditButton basepath="/students" />
           <DeleteButton basepath="/students" />

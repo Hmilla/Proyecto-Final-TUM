@@ -15,7 +15,7 @@ export default function Student() {
   const [grades, setGrades] = useState([]);
   const getGrades = async () => {
     const response = await read("grades");
-    setGrades(response.filter((grade) => grade.clase === user.class));
+    setGrades(response.filter((grade) => grade.clase === user.clase));
   };
   useEffect(() => {
     getGrades();

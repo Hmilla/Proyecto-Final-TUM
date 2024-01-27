@@ -39,6 +39,9 @@ export default function LoginComponent({ role, find }) {
     navigate(`/admin`);
   };
 
+
+
+
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
       <div className="flex items-center">

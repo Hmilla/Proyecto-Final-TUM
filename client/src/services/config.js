@@ -1,4 +1,4 @@
-const BASEUrl = "http://localhost:5000/"; 
+const BASEUrl = "http://localhost:3002/"; 
 
 export async function makeHttpRequest({url, id, body, method='GET'}){
     const finalUrl = id ? `${url}/${id}` : url

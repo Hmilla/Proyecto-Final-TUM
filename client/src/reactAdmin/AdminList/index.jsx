@@ -15,7 +15,7 @@ import {
   const AdminList = (props) => {
     const user = useSelector(userSelector)
     
-    const blockedId = user.id; // Change this to the ID you want to block
+    const blockedId = user.id; 
     
     const isRowSelectable = (record) => {
 

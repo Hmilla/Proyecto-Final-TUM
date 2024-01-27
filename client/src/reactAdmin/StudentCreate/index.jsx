@@ -8,7 +8,7 @@ const StudentCreate = (props) => {
         <TextInput required={true} source="email" />
         <SelectInput
           required={true}
-          source="class"
+          source="clase"
           choices={[
             { id: "inicial", name: "inicial" },
             { id: "1", name: "1" },

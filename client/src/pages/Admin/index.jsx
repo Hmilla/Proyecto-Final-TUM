@@ -1,6 +1,7 @@
 import { Admin, Resource } from "react-admin";
-import jsonServerProvider from "ra-data-json-server";
 import { Navigate } from "react-router-dom";
+
+import simpleRestProvider from 'ra-data-simple-rest'
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { userSelector } from "../../selectors/userSelector";
 import {
@@ -16,7 +17,9 @@ import {
  } from "../../reactAdmin";
 
 export default function AdminPage() {
-  const dataProvider = jsonServerProvider("http://localhost:5000");
+
+  const dataProvider = simpleRestProvider('http://localhost:3002');
+
   const user = useSelector(userSelector);
 
   if (!user || user.role !== "admin") return <Navigate to="/login/admin" />;
@@ -36,12 +39,12 @@ export default function AdminPage() {
           create={StudentCreate}
           edit={StudentEdit}
         />
-        <Resource
+          <Resource
           name="admins"
           list={AdminList}
           create={AdminCreate}
           edit={AdminEdit}
-        />
+        />  
       </Admin>
     </>
   );

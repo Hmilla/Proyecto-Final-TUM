@@ -23,19 +23,24 @@ export default function Teacher() {
   const getGrades = async () => {
     const response = await read("grades");
     setGrades(response.filter((grade) => grade.teacher_id === userId));
+    console.log(grades)
   };
 
   const getStudents = async () => {
     const response = await read("students");
     setStudents(response);
+    console.log(response)
   };
 
   const handleSelectClassChange = (event) => {
     setClase(event.target.value);
+    console.log(clase)
   };
 
   const handleSelectCourseChange = (event) => {
+    
     setCourse(event.target.value);
+
   };
 
   useEffect(() => {
@@ -73,13 +78,13 @@ export default function Teacher() {
     }
 
     const studentGrades = Object.keys(newGrades).map((studentId) => ({
-      student_id: parseInt(studentId),
-      grade: parseInt(newGrades[studentId]),
+      student_id: studentId,
+      grade: newGrades[studentId],
     }));
 
     const minGrade = Math.min(...studentGrades.map((grade) => grade.grade));
     const maxGrade = Math.max(...studentGrades.map((grade) => grade.grade));
-    const sumGrades = studentGrades.reduce((sum, grade) => sum + grade.grade, 0);
+    const sumGrades = studentGrades.reduce((sum, grade) => parseInt(sum) + parseInt(grade.grade), 0);
     const averageGrade = (sumGrades / studentGrades.length).toFixed(1);
 
     const newGrade = {

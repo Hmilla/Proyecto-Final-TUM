@@ -7,7 +7,7 @@ const StudentEdit = (props) => {
         <TextInput source="name" />
         <TextInput source="email" />
         <SelectInput
-          source="class"
+          source="clase"
           choices={[
             { id: "inicial", name: "inicial" },
             { id: "1", name: "1" },

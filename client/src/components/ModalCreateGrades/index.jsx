@@ -33,7 +33,7 @@ export default function ModalCreateGrades({
       />
 
       {students
-        .filter((student) => student.class === clase)
+        .filter((student) => student.clase === clase)
         .map((student) => (
           <div key={student.id} className="flex gap-5 items-center mb-5">
             
